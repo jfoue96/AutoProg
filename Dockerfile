@@ -51,7 +51,7 @@ RUN dotnet help
 
 # Copy notebooks
 
-COPY https://dev.azure.com/csf-auto-prog/_git/Auto-programmation?path=%2FTemplate%2FModule%204
+COPY . ${HOME}/Notebooks/
 
 # Copy package sources
 
