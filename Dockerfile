@@ -11,8 +11,8 @@ ENV HOME /home/${NB_USER}
 WORKDIR ${HOME}
 
 USER root
-RUN sudo apt-get update
-RUN sudo apt-get install -y curl
+RUN  apt-get update
+RUN  apt-get install -y curl
 
 # Install .NET CLI dependencies
 RUN  apt-get install -y --no-install-recommends \
