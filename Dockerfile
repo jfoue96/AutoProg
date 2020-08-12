@@ -15,7 +15,7 @@ RUN sudo apt-get update
 RUN sudo apt-get install -y curl
 
 # Install .NET CLI dependencies
-RUN sudo apt-get install -y --no-install-recommends \
+RUN  apt-get install -y --no-install-recommends \
         libc6 \
         libgcc1 \
         libgssapi-krb5-2 \
