@@ -1,4 +1,4 @@
-FROM jupyter/scipy-notebook:45f07a14b422
+FROM jupyter/base-notebook:latest
 
 # Install .NET CLI dependencies
 
@@ -15,16 +15,16 @@ RUN  apt-get update
 RUN  apt-get install -y curl
 
 # Install .NET CLI dependencies
-RUN  apt-get install -y --no-install-recommends \
-        libc6 \
-        libgcc1 \
-        libgssapi-krb5-2 \
-        libicu60 \
-        libssl1.1 \
-        libstdc++6 \
-        zlib1g 
+#RUN  apt-get install -y --no-install-recommends \
+#        libc6 \
+#        libgcc1 \
+#        libgssapi-krb5-2 \
+#        libicu60 \
+#        libssl1.1 \
+#        libstdc++6 \
+#        zlib1g 
 
-RUN rm -rf /var/lib/apt/lists/*
+#RUN rm -rf /var/lib/apt/lists/*
 
 # Install .NET Core SDK
 ENV DOTNET_SDK_VERSION 3.0.100
@@ -50,7 +50,7 @@ ENV DOTNET_RUNNING_IN_CONTAINER=true \
 RUN dotnet help
 
 # Copy notebooks
-
+COPY ${HOME}/Module4
 # Copy package sources
 
 # COPY ./NuGet.config ${HOME}/nuget.config
@@ -72,3 +72,4 @@ RUN dotnet try jupyter install
 ENV DOTNET_TRY_CLI_TELEMETRY_OPTOUT=false
 
 # Set root to Notebooks
+COPY . ${HOME}
