@@ -49,8 +49,8 @@ ENV DOTNET_RUNNING_IN_CONTAINER=true \
 # Trigger first run experience by running arbitrary cmd
 RUN dotnet help
 
-# Copy notebooks
-COPY ${HOME}/Module4
+# Copy notebook
+
 # Copy package sources
 
 # COPY ./NuGet.config ${HOME}/nuget.config
@@ -72,4 +72,3 @@ RUN dotnet try jupyter install
 ENV DOTNET_TRY_CLI_TELEMETRY_OPTOUT=false
 
 # Set root to Notebooks
-COPY . ${HOME}
