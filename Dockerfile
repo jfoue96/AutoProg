@@ -1,4 +1,4 @@
-FROM jupyter/base-notebook:latest
+FROM jupyter/base-notebook:0826489f6740
 
 # Install .NET CLI dependencies
 
@@ -16,15 +16,15 @@ RUN  apt-get install -y curl
 
 # Install .NET CLI dependencies
 #RUN  apt-get install -y --no-install-recommends \
-#        libc6 \
-#        libgcc1 \
-#        libgssapi-krb5-2 \
-#        libicu60 \
-#        libssl1.1 \
-#        libstdc++6 \
-#        zlib1g 
+        libc6 \
+        libgcc1 \
+        libgssapi-krb5-2 \
+        libicu60 \
+        libssl1.1 \
+        libstdc++6 \
+        zlib1g 
 
-#RUN rm -rf /var/lib/apt/lists/*
+RUN rm -rf /var/lib/apt/lists/*
 
 # Install .NET Core SDK
 ENV DOTNET_SDK_VERSION 3.0.100
